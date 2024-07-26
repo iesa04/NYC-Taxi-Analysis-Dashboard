@@ -382,7 +382,7 @@ def create_donut_chart_time_of_day(df):
 
 def show_zones_map():
     # Load the taxi zone dataset
-    taxi_zones = gpd.read_file("data/taxi_zones.shp")
+    taxi_zones = gpd.read_file("data/taxi_zones/taxi_zones.shp")
 
     # Calculate centroids
     taxi_zones['centroid'] = taxi_zones.geometry.centroid
@@ -519,7 +519,7 @@ def show_zones_map():
 def trip_planner():
     contingency_df=pd.read_csv("data/frequency_table.csv")
     contingency_df.drop(columns=['Unnamed: 0'], inplace=True)
-    taxi_zones = gpd.read_file("data/taxi_zones.shp")
+    taxi_zones = gpd.read_file("data/taxi_zones/taxi_zones.shp")
     taxi_zones['centroid'] = taxi_zones['geometry'].centroid
     location_id_to_zone = taxi_zones.set_index('LocationID')['zone'].to_dict()
     st.markdown("# NYC Taxi Zones with Top Dropoff Locations")
