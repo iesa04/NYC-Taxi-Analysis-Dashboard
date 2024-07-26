@@ -8,3 +8,4 @@ geopandas
 matplotlib
 matplotlib
 seaborn
+fastparquet
