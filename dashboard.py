@@ -382,7 +382,7 @@ def create_donut_chart_time_of_day(df):
 
 def show_zones_map():
     # Load the taxi zone dataset
-    taxi_zones = gpd.read_file(r"D:\Iesa\MIT\Sem 4\NYC Taxi\taxi_zones\taxi_zones.shp")
+    taxi_zones = gpd.read_file("data/taxi_zones.shp")
 
     # Calculate centroids
     taxi_zones['centroid'] = taxi_zones.geometry.centroid
