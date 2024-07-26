@@ -1,10 +1,10 @@
 streamlit
 numpy 
 pandas
-plotly.express
+plotly
 streamlit_option_menu
 pydeck
 geopandas
-matplotlib.pyplot
-matplotlib.cm
+matplotlib
+matplotlib
 seaborn
