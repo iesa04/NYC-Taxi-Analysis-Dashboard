@@ -28,7 +28,7 @@ MONTHS = {
 }
 
 def read_df(month_number):
-    return pd.read_parquet(r"D:\Iesa\MIT\Sem 4\NYC Taxi\Data\processed_yellow_trip_data_2023-0{}.parquet".format(month_number),  engine = "fastparquet")
+    return pd.read_parquet("data/sampled_yellow_trip_data_2023-0{}.parquet".format(month_number),  engine = "fastparquet")
 
 data = pd.DataFrame({
     'x': range(10),
@@ -517,9 +517,9 @@ def show_zones_map():
 
 
 def trip_planner():
-    contingency_df=pd.read_csv(r"D:\Iesa\MIT\Sem 4\NYC Taxi\Data\frequency_table.csv")
+    contingency_df=pd.read_csv("data/frequency_table.csv")
     contingency_df.drop(columns=['Unnamed: 0'], inplace=True)
-    taxi_zones = gpd.read_file(r"D:\Iesa\MIT\Sem 4\NYC Taxi\taxi_zones\taxi_zones.shp")
+    taxi_zones = gpd.read_file("data/taxi_zones.shp")
     taxi_zones['centroid'] = taxi_zones['geometry'].centroid
     location_id_to_zone = taxi_zones.set_index('LocationID')['zone'].to_dict()
     st.markdown("# NYC Taxi Zones with Top Dropoff Locations")
